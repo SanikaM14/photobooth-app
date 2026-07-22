@@ -38,6 +38,38 @@ A modern, responsive web application for capturing and styling photos with aesth
 - Docker & Docker Compose
 - ESLint
 
+## Application Walkthrough
+
+![Template Selection](public/Read/P0.png)
+Select from a curated variety of themed photobooth strip templates to personalize your session.
+
+![Account Creation](public/Read/P1.png)
+Create a secure account to save, manage, and access your captured photo strips across sessions.
+
+![User Login](public/Read/P2.png)
+Sign in to your existing account to retrieve your personalized gallery and previous captures.
+
+![Camera Capture](public/Read/P3.png)
+Capture photos using your webcam with an automated countdown timer for precise timing.
+
+![Strip Compositor](public/Read/P4.png)
+View the finalized photo strip composition immediately after your capture session concludes.
+
+![Download Options](public/Read/P5.png)
+Download the high-resolution photo strip directly to your local device for sharing and printing.
+
+![Customization](public/Read/P6.png)
+Customize your final strip by applying visual filters and adjusting the output file format and size.
+
+![Photo Gallery](public/Read/P7.png)
+Browse your personal collection of captured photo strips within the dedicated user gallery.
+
+![Gallery Filtering](public/Read/P8.png)
+Organize your gallery by applying sorting preferences and thematic filters to locate specific captures.
+
+![Delete Confirmation](public/Read/P9.png)
+Manage your storage by securely deleting unwanted photo strips from your collection.
+
 ## Prerequisites
 
 - Node.js (v18.x or higher)
