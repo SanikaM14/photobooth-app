@@ -40,14 +40,14 @@ A modern, responsive web application for capturing and styling photos with aesth
 
 ## Application Walkthrough
 
-![Template Selection](public/Read/P0.png)
-Select from a curated variety of themed photobooth strip templates to personalize your session.
-
 ![Account Creation](public/Read/P1.png)
 Create a secure account to save, manage, and access your captured photo strips across sessions.
 
 ![User Login](public/Read/P2.png)
 Sign in to your existing account to retrieve your personalized gallery and previous captures.
+
+![Template Selection](public/Read/P0.png)
+Select from a curated variety of themed photobooth strip templates to personalize your session.
 
 ![Camera Capture](public/Read/P3.png)
 Capture photos using your webcam with an automated countdown timer for precise timing.
@@ -165,3 +165,7 @@ The resulting files will be located in the `dist` directory, ready to be served 
 - Powered by React and Vite
 - Styled with Tailwind CSS
 - Backend powered by FastAPI
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
