@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# Rose Photobooth
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive web application for capturing and styling photos with aesthetic filters. Built utilizing the latest frontend and backend technologies to provide a seamless user experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **React 18**: Frontend framework providing improved rendering and concurrent features.
+- **Vite**: High-performance build tool and development server.
+- **TailwindCSS**: Utility-first CSS framework for comprehensive, responsive styling.
+- **React Router v6**: Declarative routing for single-page application navigation.
+- **FastAPI**: High-performance Python backend framework for secure API endpoints.
+- **Authentication**: Robust email and password authentication with secure session management, built-in rate limiting, and password hashing (bcrypt).
+- **Database Integration**: SQLAlchemy ORM with MySQL/SQLite support for reliable data persistence.
+- **Docker Support**: Containerized architecture for consistent, isolated deployments across environments.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Frontend:**
+- React 18
+- Vite
+- Tailwind CSS
+- React Router v6
+- React Hook Form
+- Framer Motion
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Backend:**
+- Python 3.10+
+- FastAPI
+- SQLAlchemy
+- Passlib & Bcrypt (Password Hashing)
+- PyJWT (Authentication)
 
-### `npm test`
+**Database:**
+- MySQL (Production)
+- SQLite (Development)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**DevOps & Tooling:**
+- Docker & Docker Compose
+- ESLint
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v18.x or higher)
+- npm or yarn
+- Python 3.10+
+- Docker and Docker Compose (optional, for containerized deployment)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation and Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Docker Deployment (Recommended)
 
-### `npm run eject`
+The easiest way to run the full application stack is using Docker Compose.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Ensure Docker Desktop is running.
+2. Build and start the containers in detached mode:
+   ```bash
+   docker-compose up --build -d
+   ```
+3. The frontend will be available at `http://localhost:3000` and the backend API at `http://localhost:8080`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Local Development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you prefer to run the application natively without Docker:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Backend Setup:**
+1. Navigate to the project root directory.
+2. Create and activate a Python virtual environment:
+   ```bash
+   python -m venv backend/venv
+   source backend/venv/bin/activate  # On Windows: backend\venv\Scripts\activate
+   ```
+3. Install the required Python dependencies:
+   ```bash
+   pip install -r backend/requirements.txt
+   ```
+4. Start the FastAPI server:
+   ```bash
+   uvicorn backend.main:app --host 127.0.0.1 --port 8080 --reload
+   ```
 
-## Learn More
+**Frontend Setup:**
+1. Open a new terminal and navigate to the project root directory.
+2. Install Node dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+rose-photobooth/
+├── backend/              # FastAPI application and Python logic
+│   ├── static/           # Stored uploads and media
+│   ├── auth.py           # Authentication and security utilities
+│   ├── config.py         # Environment configurations
+│   ├── database.py       # Database connection handling
+│   ├── main.py           # API endpoints and application entry
+│   ├── models.py         # SQLAlchemy database models
+│   ├── schemas.py        # Pydantic validation schemas
+│   └── requirements.txt  # Python dependencies
+├── public/               # Static frontend assets
+├── src/                  # React source code
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # View components (Login, Strip Selection, etc.)
+│   ├── services/         # API integration services
+│   ├── App.js            # Main application router
+│   └── index.jsx         # Application entry point
+├── docker-compose.yml    # Multi-container orchestration
+├── Dockerfile            # Frontend container specification
+└── package.json          # Node dependencies and scripts
+```
 
-### Code Splitting
+## Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project utilizes Tailwind CSS for styling. The configuration includes tailored typography, responsive utilities, and custom aesthetics aligned with the application's branding. 
 
-### Analyzing the Bundle Size
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To build the application for a production environment, run the following command to generate the optimized frontend bundle:
 
-### Making a Progressive Web App
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The resulting files will be located in the `dist` directory, ready to be served by Nginx or another static file server.
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Powered by React and Vite
+- Styled with Tailwind CSS
+- Backend powered by FastAPI
