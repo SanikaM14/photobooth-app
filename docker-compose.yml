@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rose-photobooth-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      # Mount a directory instead of a file, because Docker named volumes should map to directories
+      - photobooth-db-data:/app/data
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=sqlite:////app/data/photobooth.db
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Pass build arguments to Vite
+        - VITE_API_URL=http://localhost:8080/api
+        - VITE_GOOGLE_CLIENT_ID=${VITE_GOOGLE_CLIENT_ID}
+    container_name: rose-photobooth-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  photobooth-db-data:
