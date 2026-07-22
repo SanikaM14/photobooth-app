@@ -30,3 +30,5 @@ backend/__pycache__/
 *.pyc
 dist/
 
+
+backend/static/uploads/
